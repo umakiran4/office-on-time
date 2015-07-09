@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html ng-app="ootApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
+    <title>Home</title>
+
+    <!--<link href="css/index.css" rel="stylesheet" />-->
+    <!--<link href="css/overrides.css" rel="stylesheet" />-->
+    <link href="css/main.css" rel="stylesheet" />
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <!-- Animation and jquery references-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/jquery.scrollzer.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- angularapp references -->
+    <script src="scripts/frameworks/angular.min.js"></script>
+    <script src="scripts/frameworks/angular-resource.min.js"></script>
+    <script src="scripts/frameworks/angular-route.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/Controllers/homeController.js"></script>
+    <script src="scripts/Controllers/registrationController.js"></script>
+
+</head>
+<body>
+    <div ng-controller="HomeCtrl">
+        <div id="header">
+            <div class="top">
+                <div id="logo">
+                    <span class="image avatar48"> <img src="images/avatar.jpg" alt="avatar" /></span>
+                    <h1 id="title">Office on time</h1>
+                    <p>Employee friendly</p>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#RegisterUser" id="register-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Register</span></a></li>
+                        <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Take Survey</span></a></li>
+                        <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
+                        <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+        <div id="main">
+
+            <div ng-view>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
