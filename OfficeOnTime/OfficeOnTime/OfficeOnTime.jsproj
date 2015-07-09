@@ -119,7 +119,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Home.html" />
+    <Content Include="Main.html" />
     <Content Include="images\avatar.jpg" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\overlay.png" />
@@ -138,8 +138,13 @@
     <Content Include="js\util.js" />
     <Content Include="merges\ios\scripts\vhsupport.js" />
     <Content Include="merges\wp8\css\overrides.css" />
+    <Content Include="partials\Contact.html" />
+    <Content Include="partials\Feedback.html" />
+    <Content Include="partials\Home.html" />
     <Content Include="partials\Registration.html" />
     <Content Include="res\native\windows\CordovaApp_TemporaryKey.pfx" />
+    <Content Include="scripts\Controllers\contactController.js" />
+    <Content Include="scripts\Controllers\feedbackController.js" />
     <Content Include="scripts\Controllers\homeController.js" />
     <Content Include="scripts\Controllers\registrationController.js" />
     <Content Include="scripts\directives.js" />

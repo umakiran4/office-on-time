@@ -3,7 +3,6 @@
     "scripts\\frameworks\\angular.min.js",
     "res\\icons\\windows\\logo.png",
     "images\\pic03.jpg",
-    "Home.html",
     "res\\icons\\android\\icon-72-hdpi.png",
     "merges\\ios\\scripts\\vhsupport.js",
     "res\\screens\\android\\screen-mdpi-landscape.png",
@@ -92,12 +91,26 @@
     "fonts\\fontawesome-webfont.ttf",
     "scripts\\frameworks\\angular-resource.min.js",
     "res\\screens\\android\\screen-mdpi-portrait.png",
-    "fonts\\fontawesome-webfont.woff"
+    "fonts\\fontawesome-webfont.woff",
+    "scripts\\Controllers\\contactController.js",
+    "partials\\Contact.html",
+    "partials\\Home.html",
+    "Main.html",
+    "partials\\Feedback.html",
+    "scripts\\Controllers\\feedbackController.js"
   ],
-  "deletedFilesIos": [],
+  "deletedFilesIos": [
+    "scripts\\Controllers\\ContactCtrl.js",
+    "Home.html"
+  ],
   "addedPluginsIos": [],
   "deletedPluginsIos": [],
-  "changedFiles": [],
+  "changedFiles": [
+    "Main.html",
+    "partials\\Feedback.html",
+    "scripts\\Controllers\\feedbackController.js",
+    "scripts\\app.js"
+  ],
   "deletedFiles": [],
   "addedPlugins": [],
   "deletedPlugins": []

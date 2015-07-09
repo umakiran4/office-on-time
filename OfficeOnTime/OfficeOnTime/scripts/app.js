@@ -19,10 +19,22 @@ ootApp.config([
 ootApp.config(['$routeProvider',
 function ($routeProvider) {
     $routeProvider.
-      when('/RegisterUser', {
+      when('/Home', {
+          templateUrl: 'partials/Home.html',
+          controller: 'HomeCtrl'
+      }).
+      when('/Register', {
           templateUrl: 'partials/Registration.html',
           controller: 'RegistrationCtrl'
       }).
+     when('/Survey', {
+         templateUrl: 'partials/Feedback.html',
+         controller: 'FeedbackCtrl'
+     }).
+     when('/Contact', {
+         templateUrl: 'partials/Contact.html',
+         controller: 'ContactCtrl'
+     }).
       otherwise({
           redirectTo: '/data'
       });

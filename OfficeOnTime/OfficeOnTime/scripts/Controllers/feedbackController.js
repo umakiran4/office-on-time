@@ -1,5 +1,5 @@
 ﻿'use strict';
-ootApp.controller('HomeCtrl', ['$scope',
+ootApp.controller('FeedbackCtrl', ['$scope',
         function ($scope) {
 
         }]);

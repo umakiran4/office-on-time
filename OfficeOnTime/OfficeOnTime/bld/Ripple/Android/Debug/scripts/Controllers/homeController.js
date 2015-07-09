@@ -1,5 +1,5 @@
 ﻿'use strict';
-ootApp.controller('HomeCtrl', ['$scope', '$rootScope',
-        function ($scope, $rootScope) {
+ootApp.controller('HomeCtrl', ['$scope',
+        function ($scope) {
 
         }]);
