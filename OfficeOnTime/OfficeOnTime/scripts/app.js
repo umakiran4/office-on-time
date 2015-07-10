@@ -36,7 +36,7 @@ function ($routeProvider) {
          controller: 'ContactCtrl'
      }).
       otherwise({
-          redirectTo: '/data'
+          redirectTo: '/Home'
       });
 }]);
 
