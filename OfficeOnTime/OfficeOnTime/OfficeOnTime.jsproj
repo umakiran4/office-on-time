@@ -111,6 +111,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\font-face.css" />
     <Content Include="css\main.css" />
     <Content Include="css\overrides.css" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -130,9 +131,6 @@
     <Content Include="images\pic06.jpg" />
     <Content Include="images\pic07.jpg" />
     <Content Include="images\pic08.jpg" />
-    <Content Include="js\jquery.min.js" />
-    <Content Include="js\jquery.scrolly.min.js" />
-    <Content Include="js\jquery.scrollzer.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\skel.min.js" />
     <Content Include="js\util.js" />
@@ -148,9 +146,24 @@
     <Content Include="scripts\Controllers\homeController.js" />
     <Content Include="scripts\Controllers\registrationController.js" />
     <Content Include="scripts\directives.js" />
-    <Content Include="scripts\frameworks\angular-resource.min.js" />
-    <Content Include="scripts\frameworks\angular-route.min.js" />
-    <Content Include="scripts\frameworks\angular.min.js" />
+    <Content Include="scripts\frameworks\angular\angular-resource.min.js" />
+    <Content Include="scripts\frameworks\angular\angular-route.min.js" />
+    <Content Include="scripts\frameworks\angular\angular.min.js" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\css\bootstrap-theme.css" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\css\bootstrap-theme.css.map" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\css\bootstrap-theme.min.css" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\css\bootstrap.css" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\css\bootstrap.css.map" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\css\bootstrap.min.css" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\js\bootstrap.js" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\js\bootstrap.min.js" />
+    <Content Include="scripts\frameworks\bootstrap-3.3.5\js\npm.js" />
+    <Content Include="scripts\frameworks\jquery\jquery.min.js" />
     <Content Include="scripts\vhsupport.js" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
     <Content Include="merges\android\scripts\platformOverrides.js" />
@@ -172,7 +185,6 @@
     <Content Include="scripts\app.js" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\platformOverrides.js" />
-    <Content Include="css\index.css" />
     <Content Include="res\icons\android\icon-36-ldpi.png" />
     <Content Include="res\icons\android\icon-48-mdpi.png" />
     <Content Include="res\icons\android\icon-72-hdpi.png" />

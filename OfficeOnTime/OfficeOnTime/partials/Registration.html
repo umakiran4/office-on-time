@@ -1,26 +1,60 @@
 ﻿
 <section class="one dark cover">
     <div class="container">
-        <div class="row">
+
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="inputfname" ng-model="User.FirstName" placeholder="First Name" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="inputlname" ng-model="User.LastName" placeholder="Last Name" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="inputempid" ng-model="User.EmpId" placeholder="Emp Id" required maxlength="4" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" id="inputemail" ng-model="User.Email" placeholder="Email Address" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="inputmobile" ng-model="User.Mobile" placeholder="Mobile Number" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" ng-click="Register()">Register</button>
+                </div>
+            </div>
+        </form>
+
+        <!--<div class="row">
             <div class="6u 12u$(mobile)">
-                <input id="txtFirstName" type="text" ng-model="User.FirstName" placeholder="First Name" />
+                <input id="txtFirstName" type="text" ng-model="User.FirstName" placeholder="First Name" required  />
             </div>
             <div class="6u 12u$(mobile)">
-                <input id="txtLastName" type="text" ng-model="User.LastName" placeholder="Last Name" />
+                <input id="txtLastName" type="text" ng-model="User.LastName" placeholder="Last Name" required />
             </div>
             <div class="6u 12u$(mobile)">
-                <input id="txtEmpId" type="text" ng-model="User.EmpId" placeholder="Emp Id" />
+                <input id="txtEmpId" type="text" ng-model="User.EmpId" placeholder="Emp Id" required maxlength="4" />
             </div>
             <div class="6u 12u$(mobile)">
-                <input id="txtEmail" type="email" ng-model="User.Email" placeholder="Email Address" />
+                <input id="txtEmail" type="email" ng-model="User.Email" placeholder="Email Address" required />
             </div>
             <div class="6u 12u$(mobile)">
-                <input id="txtMobile" type="number" ng-model="User.Mobile" placeholder="Mobile Number" />
+                <input id="txtMobile" type="number" ng-model="User.Mobile" placeholder="Mobile Number" required />
             </div>
 
             <div class="12u$">
                 <input id="btnSubmit" type="button" value="Submit" ng-click="Register()" />
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
