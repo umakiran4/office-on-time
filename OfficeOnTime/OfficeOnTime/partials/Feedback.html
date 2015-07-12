@@ -12,21 +12,14 @@
         </p>
         <div class="row">
             <div class="6u 12u$(mobile)">
-                On time: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating,info)" info="OnTime"></div>
-            </div>
-            <div class="6u 12u$(mobile)">
-                Driving: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating, info)" info="Driving"></div>
-            </div>
-            <div class="6u 12u$(mobile)">
-                Behaviour: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating, info)" info="Behaviour"></div>
-            </div>
-            <div class="6u 12u$(mobile)">
-                Hygenic: <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating, info)" info="Hygenic"></div>
+                <span ng-repeat="rating in ratings">                    
+                    {{rating.category}}
+                    <div star-rating rating-value="rating.current" max="rating.max" category="{{rating.category}}" on-rating-selected="getSelectedRating(rating,category)"></div>
+                </span>
             </div>
             <div class="6u 12u$(mobile)">
                 <button id="btnSubmit" type="submit" class="btn btn-primary" ng-click="Submit()">Submit</button>
             </div>
         </div>
-
     </div>
 </section>

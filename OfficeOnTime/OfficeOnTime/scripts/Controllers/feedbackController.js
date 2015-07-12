@@ -1,35 +1,31 @@
 ﻿'use strict';
 ootApp.controller('FeedbackCtrl', ['$scope', '$http',
         function ($scope, $http) {
-            $scope.rating = {
-                current: 5,
-                max: 10
-            };
-            $scope.OnTime = { current: 5, max: 10 };
-            $scope.Driving = { current: 5, max: 10 };
-            $scope.Behaviour = { current: 5, max: 10 };
-            $scope.Hygenic = { current: 5, max: 10 };
-            $scope.Ratings = {}
-            $scope.getSelectedRating = function (rating, info) {
-                switch (info) {
-                    case "OnTime":
-                        $scope.Ratings.OnTime = rating;
-                        break;
-                    case "Driving":
-                        $scope.Ratings.Driving = rating;
-                        break;
-                    case "Behaviour":
-                        $scope.Ratings.Behaviour = rating;
-                        break;
-                    case "Hygenic":
-                        $scope.Ratings.Hygenic = rating;
-                        break;
-                    default:
-                        console.log(info);
-                }
+            $scope.rating = 0;
+
+            $scope.ratings = [{
+                current: 1,
+                max: 5,
+                category: 'OnTime'
+            }, {
+                current: 3,
+                max: 5,
+                category: 'Driving'
+            }, {
+                current: 2,
+                max: 5,
+                category: 'Behaviour'
+            }, {
+                current: 2,
+                max: 5,
+                category: 'Hygeine'
+            }];
+           
+            $scope.getSelectedRating = function (rating, category) {
+                alert(category+':'+rating);
             }
 
             $scope.Submit = function () {
-                alert($scope.Ratings.Driving);
+                alert($scope.rating);
             }
         }]);

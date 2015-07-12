@@ -7,12 +7,13 @@ ootApp.directive('starRating', function () {
             '</li>' +
             '</ul>',
         scope: {
-            ratingValue: '=info',
+            ratingValue: '=',
             max: '=',
-            onRatingSelected: '&'
+            onRatingSelected: '&',
+            category: '@'
         },
         link: function (scope, elem, attrs) {
-            scope.elementInfo = attrs.info;
+
             var updateStars = function () {
                 scope.stars = [];
                 for (var i = 0; i < scope.max; i++) {
@@ -22,11 +23,11 @@ ootApp.directive('starRating', function () {
                 }
             };
 
-            scope.toggle = function (index) {
+            scope.toggle = function (index) {                
                 scope.ratingValue = index + 1;
                 scope.onRatingSelected({
                     rating: index + 1,
-                    info:scope.elementInfo
+                    category: scope.category
                 });
             };
 
