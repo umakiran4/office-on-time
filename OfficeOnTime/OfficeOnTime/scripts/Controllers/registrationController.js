@@ -5,10 +5,12 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$http','geolocation',
           $scope.User = {};
 
           $scope.Register = function () {
+              if ($scope.regForm.$invalid) return;
               alert($scope.User.FirstName);
           }
 
           $scope.getLocation = function () {
+              $scope.User.CheckInLocation = 'Please wait...'
               geolocation.getCurrentPosition(function (position) {
                   alert('Latitude: ' + position.coords.latitude + '\n' +
                         'Longitude: ' + position.coords.longitude + '\n' +

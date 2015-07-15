@@ -4,20 +4,20 @@
         <header>
             <h2>Account details</h2>
         </header>
-        <form>
+        <form name="regForm">
             <div class="form-group">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="inputfname" ng-model="User.FirstName" placeholder="First Name" required />
+                    <input type="text" class="form-control" id="inputfname" minlength="3" ng-model="User.FirstName" placeholder="First Name" required only-alphabets />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="inputlname" ng-model="User.LastName" placeholder="Last Name" required />
+                    <input type="text" class="form-control" id="inputlname" minlength="3" ng-model="User.LastName" placeholder="Last Name" required only-alphabets />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="inputempid" ng-model="User.EmpId" placeholder="Emp Id" required maxlength="4" />
+                    <input type="text" class="form-control" id="inputempid" ng-model="User.EmpId" placeholder="Emp Id" required maxlength="4" only-numbers />
                 </div>
             </div>
             <div class="form-group">
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="inputmobile" ng-model="User.Mobile" placeholder="Mobile Number" required />
+                    <input type="text" class="form-control" id="inputmobile" ng-model="User.Mobile" placeholder="Mobile Number" maxlength="10" minlength="10" required only-numbers />
                 </div>
             </div>
 

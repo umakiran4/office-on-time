@@ -1,28 +1,17 @@
 ﻿'use strict';
-ootApp.controller('FeedbackCtrl', ['$scope', '$http',
-        function ($scope, $http) {
-            $scope.rating = 0;
+ootApp.controller('FeedbackCtrl', ['$scope', 'categoryService',
+        function ($scope, categoryService) {
 
-            $scope.ratings = [{
-                current: 1,
-                max: 5,
-                category: 'OnTime'
-            }, {
-                current: 3,
-                max: 5,
-                category: 'Driving'
-            }, {
-                current: 2,
-                max: 5,
-                category: 'Behaviour'
-            }, {
-                current: 2,
-                max: 5,
-                category: 'Hygeine'
-            }];
-           
+            categoryService.getCategories().then(function (dataResponse) {
+                $scope.ratings = dataResponse.data;                
+            });
+
+            $scope.rating = 0;
+            $scope.current = 1;
+            $scope.max = 5;
+                      
             $scope.getSelectedRating = function (rating, category) {
-                alert(category+':'+rating);
+                alert(category.trim()+':'+rating);
             }
 
             $scope.Submit = function () {

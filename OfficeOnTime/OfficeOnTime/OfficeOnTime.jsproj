@@ -178,7 +178,9 @@
     <Content Include="scripts\Controllers\feedbackController.js" />
     <Content Include="scripts\Controllers\homeController.js" />
     <Content Include="scripts\Controllers\registrationController.js" />
-    <Content Include="scripts\directives.js" />
+    <Content Include="scripts\Directives\onlyAlphabets.js" />
+    <Content Include="scripts\Directives\onlyNumbers.js" />
+    <Content Include="scripts\Directives\starRating.js" />
     <Content Include="scripts\frameworks\angular\angular-resource.min.js" />
     <Content Include="scripts\frameworks\angular\angular-route.min.js" />
     <Content Include="scripts\frameworks\angular\angular.min.js" />
@@ -197,9 +199,10 @@
     <Content Include="scripts\frameworks\bootstrap-3.3.5\js\bootstrap.min.js" />
     <Content Include="scripts\frameworks\bootstrap-3.3.5\js\npm.js" />
     <Content Include="scripts\frameworks\jquery\jquery.min.js" />
-    <Content Include="scripts\Services\cordovaReadyService.js" />
-    <Content Include="scripts\Services\geoLocationService.js" />
-    <Content Include="scripts\Services\getCurrentAccelerationService.js" />
+    <Content Include="scripts\Factories\cordovaReadyFactory.js" />
+    <Content Include="scripts\Factories\geoLocationFactory.js" />
+    <Content Include="scripts\Factories\getCurrentAccelerationFactory.js" />
+    <Content Include="scripts\Services\CategoryService.js" />
     <Content Include="scripts\vhsupport.js" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
     <Content Include="merges\android\scripts\platformOverrides.js" />
