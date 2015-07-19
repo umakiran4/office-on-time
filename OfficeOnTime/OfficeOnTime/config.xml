@@ -9,5 +9,6 @@
   <preference name="windows-target-version" value="8.0" />
   <preference name="windows-phone-target-version" value="8.1" />
   <vs:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+  <vs:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
   <vs:platformSpecificValues />
 </widget>

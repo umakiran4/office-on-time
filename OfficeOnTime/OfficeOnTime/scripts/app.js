@@ -2,7 +2,7 @@
 var ootApp = angular.module('ootApp', [
       'ngRoute'
 ]).run(function ($rootScope) {
-    $rootScope.canShow = true;
+    $rootScope.url = 'http://localhost:20911/';
 });
 
 // Fix for platform-specific URL prefixing.

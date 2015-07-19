@@ -10,7 +10,7 @@ ootApp.directive('starRating', function () {
             ratingValue: '=',
             max: '=',
             onRatingSelected: '&',
-            category: '@'
+            category: '='
         },
         link: function (scope, elem, attrs) {
 
