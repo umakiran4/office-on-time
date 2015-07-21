@@ -1,24 +1,25 @@
 ﻿'use strict';
-ootApp.controller('RegistrationCtrl', ['$scope', '$http', 'geolocation', 'registrationService', 'Notification',
-      function ($scope, $http, geolocation, registrationService, Notification) {
+ootApp.controller('RegistrationCtrl', ['$scope', '$http', 'geolocation', 'registrationService', 'Notification', 'SpinnerDialog',
+      function ($scope, $http, geolocation, registrationService, Notification, SpinnerDialog) {
 
           $scope.User = {};
 
           $scope.Register = function () {
               if ($scope.regForm.$invalid) return;
-              alert($scope.User.EmployeeMobileNumber);
+              SpinnerDialog.show();
               var employeeId = $scope.User.EmployeeID;
               registrationService.isRegistered(employeeId).then(function (dataResponse) {
+                  SpinnerDialog.hide();
                   $scope.existingUser = dataResponse.data;
                   if ($scope.existingUser == true || $scope.existingUser === 'true') {
-                      $scope.showAlert();
-                      alert("Already registered");
+                      $scope.showAlert('Already registered!');
                   }
                   else {
                       $scope.addEmployee();
                   }
               }, function (error) {
-                  alert(error.data);
+                  SpinnerDialog.hide();
+                  $scope.showAlert(error.data.code);
               })
           };
 
@@ -31,7 +32,7 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$http', 'geolocation', 'regist
           $scope.getLocation = function () {
               $scope.User.CheckInLocation = 'Please wait...'
               geolocation.getCurrentPosition(function (position) {
-                  alert('Latitude: ' + position.coords.latitude + '\n' +
+                  $scope.showAlert('Latitude: ' + position.coords.latitude + '\n' +
                         'Longitude: ' + position.coords.longitude + '\n' +
                         'Altitude: ' + position.coords.altitude + '\n' +
                         'Accuracy: ' + position.coords.accuracy + '\n' +
@@ -43,10 +44,10 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$http', 'geolocation', 'regist
               });
           };
 
-          $scope.showAlert = function () {
+          $scope.showAlert = function (message) {
               Notification.alert(
-                        'Already registered!',  // message
-                        alertDismissed,        // callback
+                        message,  // message
+                        $scope.alertDismissed,        // callback
                         'Info',               // title
                         'OK'                  // buttonName
                 );

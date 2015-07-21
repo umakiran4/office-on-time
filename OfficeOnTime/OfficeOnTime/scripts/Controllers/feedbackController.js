@@ -1,11 +1,14 @@
 ﻿'use strict';
-ootApp.controller('FeedbackCtrl', ['$scope', 'categoryService',
-        function ($scope, categoryService) {
+ootApp.controller('FeedbackCtrl', ['$scope', 'categoryService', 'Notification', 'SpinnerDialog',
+        function ($scope, categoryService, Notification, SpinnerDialog) {
 
             categoryService.getCategories().then(function (dataResponse) {
-                $scope.categories = dataResponse.data;                
-            },function (error) {
-                alert(error.data);
+                    SpinnerDialog.show();
+                $scope.categories = dataResponse.data;
+                    SpinnerDialog.hide();
+            }, function (error) {
+                SpinnerDialog.hide();
+                Notification.alert(error.data.code, function () { },'Info','OK');               
             });
 
             $scope.rating = 0;
@@ -20,18 +23,28 @@ ootApp.controller('FeedbackCtrl', ['$scope', 'categoryService',
                 $scope.surveyObj["Rating"] = Rating;                
             };
 
-            $scope.getSelectedRating = function (rating, category) {
-                alert(category + ':' + rating);
-                $scope.fillSurvey(4827, category, rating);
-                $scope.surveyList.push($scope.surveyObj);
+            $scope.getSelectedRating = function (rating, category) {                                
+                var addToList = true;
+                angular.forEach($scope.surveyList, function (u, i) {
+                    if (u.CategoryID === category) {
+                        u.Rating = rating;
+                        addToList = false;
+                    }
+                });
+                if (addToList) {
+                    $scope.fillSurvey(4827, category, rating);
+                    $scope.surveyList.push($scope.surveyObj);
+                }
             };
 
             $scope.Submit = function () {
-                alert($scope.rating);
+                SpinnerDialog.show();
                 categoryService.submitSurvey(JSON.stringify($scope.surveyList)).then(function (response) {
-                    alert(response.status);
+                    SpinnerDialog.hide();
+                    Notification.alert(response.status, function () { }, 'Info', 'OK');                    
                 }, function (error) {
-                    alert(error.data);
+                    SpinnerDialog.hide();
+                    Notification.alert(error.data.Message, function () { }, 'Info', 'OK');
                 })
             };
         }]);

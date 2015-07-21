@@ -140,6 +140,17 @@
     <Content Include="partials\Feedback.html" />
     <Content Include="partials\Home.html" />
     <Content Include="partials\Registration.html" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\.fetch.json" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\index.html" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\LICENSE" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\plugin.xml" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\README.md" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\src\android\CallbackProgressDialog.java" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\src\android\SpinnerDialog.java" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\src\ios\CDVSpinnerDialog.h" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\src\ios\CDVSpinnerDialog.m" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\src\wp\SpinnerDialog.cs" />
+    <Content Include="plugins\hu.dpal.phonegap.plugins.SpinnerDialog\www\spinner.js" />
     <Content Include="plugins\org.apache.cordova.dialogs\.fetch.json" />
     <Content Include="plugins\org.apache.cordova.dialogs\CONTRIBUTING.md" />
     <Content Include="plugins\org.apache.cordova.dialogs\doc\de\index.md" />
@@ -227,6 +238,7 @@
     <Content Include="scripts\Directives\onlyNumbers.js" />
     <Content Include="scripts\Directives\starRating.js" />
     <Content Include="scripts\Factories\notificationFactory.js" />
+    <Content Include="scripts\Factories\spinnerDialogFactory.js" />
     <Content Include="scripts\frameworks\angular\angular-resource.min.js" />
     <Content Include="scripts\frameworks\angular\angular-route.min.js" />
     <Content Include="scripts\frameworks\angular\angular.min.js" />
