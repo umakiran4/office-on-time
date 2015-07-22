@@ -237,6 +237,7 @@
     <Content Include="scripts\Directives\onlyAlphabets.js" />
     <Content Include="scripts\Directives\onlyNumbers.js" />
     <Content Include="scripts\Directives\starRating.js" />
+    <Content Include="scripts\Factories\dbFactory.js" />
     <Content Include="scripts\Factories\notificationFactory.js" />
     <Content Include="scripts\Factories\spinnerDialogFactory.js" />
     <Content Include="scripts\frameworks\angular\angular-resource.min.js" />
