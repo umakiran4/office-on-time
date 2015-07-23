@@ -1,8 +1,27 @@
 ﻿'use strict';
-ootApp.controller('RegistrationCtrl', ['$scope', '$http', 'geolocation', 'registrationService', 'Notification', 'SpinnerDialog',
-      function ($scope, $http, geolocation, registrationService, Notification, SpinnerDialog) {
+ootApp.controller('RegistrationCtrl', ['$scope', '$rootScope', 'dbService', '$http', 'geolocation', 'registrationService', 'Notification', 'SpinnerDialog',
+      function ($scope, $rootScope, dbService, $http, geolocation, registrationService, Notification, SpinnerDialog) {
 
           $scope.User = {};
+
+          $scope.fillUserInformation = function () {
+              if ($rootScope.userLocallyAvailable) {
+                  $scope.User.EmployeeID = $rootScope.userFromStorage.item(0).empid;
+                  $scope.User.EmployeeName = $rootScope.userFromStorage.item(0).fname;
+                  $scope.User.LastName = $rootScope.userFromStorage.item(0).lname;
+                  $scope.User.EmployeeEmail = $rootScope.userFromStorage.item(0).mail;
+                  $scope.User.EmployeeMobileNumber = $rootScope.userFromStorage.item(0).mobile;
+              }
+          };
+
+          $rootScope.$on('getResultSet', function (event, args) {
+              if (args.resultSet.length > 0) {
+                  $rootScope.userLocallyAvailable = true;
+                  $rootScope.userFromStorage = args.resultSet;                 
+              }
+          });
+
+          $scope.fillUserInformation();
 
           $scope.Register = function () {
               if ($scope.regForm.$invalid) return;
@@ -24,9 +43,15 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$http', 'geolocation', 'regist
           };
 
           $scope.addEmployee = function () {
+              $rootScope.globalUser = $scope.User;
+              if ($rootScope.userLocallyAvailable == false) {
+                  dbService.createUser();                 
+              }
               registrationService.create($scope.User).then(function (dataResponse) {
                   $scope.User = dataResponse.data;
               });
+
+              dbService.getUser();              
           };
 
           $scope.getLocation = function () {

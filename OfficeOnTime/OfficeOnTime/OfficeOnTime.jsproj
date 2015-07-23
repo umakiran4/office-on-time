@@ -237,7 +237,6 @@
     <Content Include="scripts\Directives\onlyAlphabets.js" />
     <Content Include="scripts\Directives\onlyNumbers.js" />
     <Content Include="scripts\Directives\starRating.js" />
-    <Content Include="scripts\Factories\dbFactory.js" />
     <Content Include="scripts\Factories\notificationFactory.js" />
     <Content Include="scripts\Factories\spinnerDialogFactory.js" />
     <Content Include="scripts\frameworks\angular\angular-resource.min.js" />
@@ -262,6 +261,7 @@
     <Content Include="scripts\Factories\geoLocationFactory.js" />
     <Content Include="scripts\Factories\getCurrentAccelerationFactory.js" />
     <Content Include="scripts\Services\categoryService.js" />
+    <Content Include="scripts\Services\dbService.js" />
     <Content Include="scripts\Services\registrationService.js" />
     <Content Include="scripts\vhsupport.js" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
