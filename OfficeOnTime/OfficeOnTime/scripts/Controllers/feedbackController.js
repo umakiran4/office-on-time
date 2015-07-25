@@ -36,7 +36,7 @@ ootApp.controller('FeedbackCtrl', ['$scope', '$rootScope', 'categoryService', 'N
                     }
                 });
                 if (addToList) {
-                    $scope.fillSurvey($rootScope.userFromStorage.item(0).empid, category, rating);
+                    $scope.fillSurvey($rootScope.userFromStorage.item(0).ID, category, rating);
                     $scope.surveyList.push($scope.surveyObj);
                 }
             };

@@ -7,8 +7,8 @@ ootApp.service('dbService', function ($rootScope) {
     };
 
     this.populateDB = function (tx) {
-        //tx.executeSql('DROP TABLE USER');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS USER (empid unique, fname, lname, mail, mobile)');
+        // tx.executeSql('DROP TABLE USER');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS USER (ID unique, Name, Email, Mobile)');
     };
 
     this.getUser = function () {
@@ -30,7 +30,7 @@ ootApp.service('dbService', function ($rootScope) {
     };
 
     this.executeInsertQuery = function (tx) {
-        var insertSQL = 'INSERT INTO USER (empid, fname, lname, mail, mobile) VALUES (' + $rootScope.globalUser.EmployeeID + ',' + ' " ' + $rootScope.globalUser.EmployeeName + ' " ' + ',' + ' " ' + $rootScope.globalUser.LastName + ' " ' + ',' + ' " ' + $rootScope.globalUser.EmployeeEmail + ' " ' + ',' + $rootScope.globalUser.EmployeeMobileNumber + ')';
+        var insertSQL = 'INSERT INTO USER (ID, Name, Email, Mobile) VALUES (' + $rootScope.globalUser.ID + ',' + ' " ' + $rootScope.globalUser.Name + ' " ' + ',' + ' " ' + $rootScope.globalUser.Email + ' " ' + ',' + $rootScope.globalUser.Mobile + ')';
         tx.executeSql(insertSQL);
     };
 

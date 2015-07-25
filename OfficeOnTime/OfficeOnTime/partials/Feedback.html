@@ -13,8 +13,8 @@
         <div class="row">
             <div class="6u 12u$(mobile)">
                 <span ng-repeat="category in categories">
-                    {{category.CategoryName}}
-                    <div star-rating rating-value="current" max="max" category="category.CategoryID" on-rating-selected="getSelectedRating(rating,category)"></div>
+                    {{category.Name}}
+                    <div star-rating rating-value="current" max="max" category="category.ID" on-rating-selected="getSelectedRating(rating,category)"></div>
                 </span>
             </div>
             <div class="6u 12u$(mobile)">

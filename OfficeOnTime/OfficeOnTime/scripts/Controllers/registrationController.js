@@ -6,18 +6,17 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$rootScope', 'dbService', '$ht
 
           $scope.fillUserInformation = function () {
               if ($rootScope.userLocallyAvailable) {
-                  $scope.User.EmployeeID = $rootScope.userFromStorage.item(0).empid;
-                  $scope.User.EmployeeName = $rootScope.userFromStorage.item(0).fname;
-                  $scope.User.LastName = $rootScope.userFromStorage.item(0).lname;
-                  $scope.User.EmployeeEmail = $rootScope.userFromStorage.item(0).mail;
-                  $scope.User.EmployeeMobileNumber = $rootScope.userFromStorage.item(0).mobile;
+                  $scope.User.ID = $rootScope.userFromStorage.item(0).ID;
+                  $scope.User.Name = $rootScope.userFromStorage.item(0).Name;
+                  $scope.User.Email = $rootScope.userFromStorage.item(0).Email;
+                  $scope.User.Mobile = $rootScope.userFromStorage.item(0).Mobile;
               }
           };
 
           $rootScope.$on('getResultSet', function (event, args) {
               if (args.resultSet.length > 0) {
                   $rootScope.userLocallyAvailable = true;
-                  $rootScope.userFromStorage = args.resultSet;                 
+                  $rootScope.userFromStorage = args.resultSet;
               }
           });
 
@@ -26,7 +25,7 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$rootScope', 'dbService', '$ht
           $scope.Register = function () {
               if ($scope.regForm.$invalid) return;
               SpinnerDialog.show();
-              var employeeId = $scope.User.EmployeeID;
+              var employeeId = $scope.User.ID;
               registrationService.isRegistered(employeeId).then(function (dataResponse) {
                   SpinnerDialog.hide();
                   $scope.existingUser = dataResponse.data;
@@ -45,13 +44,13 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$rootScope', 'dbService', '$ht
           $scope.addEmployee = function () {
               $rootScope.globalUser = $scope.User;
               if ($rootScope.userLocallyAvailable == false) {
-                  dbService.createUser();                 
+                  dbService.createUser();
               }
               registrationService.create($scope.User).then(function (dataResponse) {
-                  $scope.User = dataResponse.data;
+                  // $scope.User = dataResponse.data;
               });
 
-              dbService.getUser();              
+              dbService.getUser();
           };
 
           $scope.getLocation = function () {
