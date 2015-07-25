@@ -16,4 +16,12 @@ ootApp.service('registrationService', function ($http, $rootScope) {
             params: { id: employeeId }
         });
     }
+    this.update = function (User) {
+        // $http() returns a $promise that we can add handlers with .then()
+        return $http({
+            method: 'PUT',
+            data: User,
+            url: $rootScope.url + 'employee/update'
+        });
+    }
 });

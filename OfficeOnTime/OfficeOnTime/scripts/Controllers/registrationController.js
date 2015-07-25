@@ -6,10 +6,11 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$rootScope', 'dbService', '$ht
 
           $scope.fillUserInformation = function () {
               if ($rootScope.userLocallyAvailable) {
-                  $scope.User.ID = $rootScope.userFromStorage.item(0).ID;
-                  $scope.User.Name = $rootScope.userFromStorage.item(0).Name;
-                  $scope.User.Email = $rootScope.userFromStorage.item(0).Email;
-                  $scope.User.Mobile = $rootScope.userFromStorage.item(0).Mobile;
+                  $scope.SubmitText = 'Update';
+                  $scope.User = $rootScope.userFromStorage[0];                  
+              }
+              else {
+                  $scope.SubmitText = 'Register';
               }
           };
 
@@ -28,9 +29,10 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$rootScope', 'dbService', '$ht
               var employeeId = $scope.User.ID;
               registrationService.isRegistered(employeeId).then(function (dataResponse) {
                   SpinnerDialog.hide();
+                  $rootScope.globalUser = $scope.User;
                   $scope.existingUser = dataResponse.data;
-                  if ($scope.existingUser == true || $scope.existingUser === 'true') {
-                      $scope.showAlert('Already registered!');
+                  if ($scope.existingUser == true || $scope.existingUser === 'true') {                      
+                      $scope.updateEmployee();
                   }
                   else {
                       $scope.addEmployee();
@@ -41,16 +43,30 @@ ootApp.controller('RegistrationCtrl', ['$scope', '$rootScope', 'dbService', '$ht
               })
           };
 
-          $scope.addEmployee = function () {
-              $rootScope.globalUser = $scope.User;
+          $scope.addEmployee = function () {              
               if ($rootScope.userLocallyAvailable == false) {
                   dbService.createUser();
               }
               registrationService.create($scope.User).then(function (dataResponse) {
-                  // $scope.User = dataResponse.data;
-              });
+                  $scope.showAlert('User created');
+              }, function (error) {
+                  SpinnerDialog.hide();
+                  $scope.showAlert(error.data.Message);
+              })
 
               dbService.getUser();
+          };
+
+          $scope.updateEmployee = function () {
+
+              dbService.updateUser();
+
+              registrationService.update($scope.User).then(function (dataResponse) {
+                  $scope.showAlert('Successfully updated');
+              }, function (error) {
+                  SpinnerDialog.hide();
+                  $scope.showAlert(error.data.Message);
+              })
           };
 
           $scope.getLocation = function () {

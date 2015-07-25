@@ -45,7 +45,7 @@ ootApp.controller('FeedbackCtrl', ['$scope', '$rootScope', 'categoryService', 'N
                 SpinnerDialog.show();
                 categoryService.submitSurvey(JSON.stringify($scope.surveyList)).then(function (response) {
                     SpinnerDialog.hide();
-                    Notification.alert(response.status, function () { }, 'Info', 'OK');
+                    Notification.alert('Feedback submitted successfully', function () { }, 'Info', 'OK');
                 }, function (error) {
                     SpinnerDialog.hide();
                     Notification.alert(error.data.Message, function () { }, 'Info', 'OK');

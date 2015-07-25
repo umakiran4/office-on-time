@@ -12,9 +12,15 @@ ootApp.controller('HomeCtrl', ['$scope', '$rootScope', 'dbService',
 
             $rootScope.$on('getResultSet', function (event, args) {
                 if (args.resultSet.length > 0) {
-                    $rootScope.userLocallyAvailable = true;                    
+                    $rootScope.userLocallyAvailable = true;
                     $rootScope.userFromStorage = args.resultSet;
+                    $scope.NavigationText = 'Feedback';
+                    $scope.NavigationLink = '#Survey';
                 }
-            });
+                else {
+                    $scope.NavigationText = 'Register';
+                    $scope.NavigationLink = '#Register';
+                }
+            });          
         }
 ]);
