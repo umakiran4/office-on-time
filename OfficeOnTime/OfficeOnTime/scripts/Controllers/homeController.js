@@ -2,7 +2,10 @@
 ootApp.controller('HomeCtrl', ['$scope', '$rootScope', 'dbService',
         function ($scope, $rootScope, dbService) {
 
-            dbService.createDB();
+            $scope.initController = function () {
+                dbService.createDB();
+            };
+            
 
             $scope.getUserFromLocalStorage = function () {
                 dbService.getUser();

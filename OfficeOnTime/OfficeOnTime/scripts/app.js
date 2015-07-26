@@ -13,9 +13,13 @@ ootApp.config([
       $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|ghttps?|ms-appx|x-wmapp0):/);
       // Use $compileProvider.urlSanitizationWhitelist(...) for Angular 1.2
       $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|ms-appx|x-wmapp0):|data:image\//);
+      $compileProvider.debugInfoEnabled(false);
   }
 ]);
 
+ootApp.config(function ($httpProvider) {
+    $httpProvider.useApplyAsync(true);
+});
 
 ootApp.config(['$routeProvider',
 function ($routeProvider) {
@@ -39,5 +43,6 @@ function ($routeProvider) {
       otherwise({
           redirectTo: '/Home'
       });
+   
 }]);
 
