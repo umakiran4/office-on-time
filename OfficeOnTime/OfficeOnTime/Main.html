@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
     <title>Home</title>
-    
+    <base href="/">
     <!--<link href="css/overrides.css" rel="stylesheet" />-->    
     <link href="scripts/frameworks/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
@@ -60,10 +60,10 @@
                 </div>
                 <nav id="nav">
                     <ul>
-                        <li><a href="#Home" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
-                        <li><a href="#Register" id="register-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Account</span></a></li>
-                        <li><a href="#Survey" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Feedback</span></a></li>
-                        <li><a href="#Contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+                        <li><a ng-href="/Home" id="top-link" class="skel-layers-ignoreHref" ng-click="go('/Home')"><span class="icon fa-home">Home</span></a></li>
+                        <li><a ng-href="/Register" id="register-link" class="skel-layers-ignoreHref" ng-click="go('/Register')"><span class="icon fa-user">Account</span></a></li>
+                        <li><a ng-href="/Survey" id="about-link" class="skel-layers-ignoreHref" ng-click="go('/Survey')"><span class="icon fa-th">Feedback</span></a></li>
+                        <li><a ng-href="/Contact" id="contact-link" class="skel-layers-ignoreHref" ng-click="go('/Contact')"><span class="icon fa-envelope">Contact</span></a></li>
                     </ul>
                 </nav>
 

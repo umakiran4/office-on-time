@@ -1,11 +1,11 @@
 ﻿'use strict';
-ootApp.controller('HomeCtrl', ['$scope', '$rootScope', 'dbService',
-        function ($scope, $rootScope, dbService) {
+ootApp.controller('HomeCtrl', ['$scope', '$rootScope', '$location', 'dbService',
+        function ($scope, $rootScope, $location, dbService) {
 
             $scope.initController = function () {
                 dbService.createDB();
             };
-            
+
 
             $scope.getUserFromLocalStorage = function () {
                 dbService.getUser();
@@ -18,12 +18,16 @@ ootApp.controller('HomeCtrl', ['$scope', '$rootScope', 'dbService',
                     $rootScope.userLocallyAvailable = true;
                     $rootScope.userFromStorage = args.resultSet;
                     $scope.NavigationText = 'Feedback';
-                    $scope.NavigationLink = '#Survey';
+                    $scope.NavigationLink = '/Survey';
                 }
                 else {
                     $scope.NavigationText = 'Register';
-                    $scope.NavigationLink = '#Register';
+                    $scope.NavigationLink = '/Register';
                 }
-            });          
+            });
+
+            $scope.go = function (url) {
+                $location.url(url);
+            };
         }
 ]);

@@ -21,28 +21,28 @@ ootApp.config(function ($httpProvider) {
     $httpProvider.useApplyAsync(true);
 });
 
-ootApp.config(['$routeProvider',
-function ($routeProvider) {
+ootApp.config(['$routeProvider','$locationProvider',
+function ($routeProvider, $locationProvider) {
     $routeProvider.
       when('/Home', {
-          templateUrl: 'partials/Home.html',
+          templateUrl: '/partials/Home.html',
           controller: 'HomeCtrl'
       }).
       when('/Register', {
-          templateUrl: 'partials/Registration.html',
+          templateUrl: '/partials/Registration.html',
           controller: 'RegistrationCtrl'
       }).
      when('/Survey', {
-         templateUrl: 'partials/Feedback.html',
+         templateUrl: '/partials/Feedback.html',
          controller: 'FeedbackCtrl'
      }).
      when('/Contact', {
-         templateUrl: 'partials/Contact.html',
+         templateUrl: '/partials/Contact.html',
          controller: 'ContactCtrl'
      }).
       otherwise({
           redirectTo: '/Home'
       });
-   
+    $locationProvider.html5Mode(true).hashPrefix('!');
 }]);
 
